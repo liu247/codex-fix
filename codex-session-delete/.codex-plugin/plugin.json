@@ -1,0 +1,22 @@
+{
+  "name": "codex-session-delete",
+  "version": "0.1.0",
+  "description": "Find and permanently delete local Codex session JSONL files by exact session ID.",
+  "author": {
+    "name": "Community"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codex Session Delete",
+    "shortDescription": "Delete local Codex conversations by session ID.",
+    "longDescription": "Codex Session Delete locates local Codex session files under $CODEX_HOME/sessions or ~/.codex/sessions by exact session ID and removes the matching JSONL file.",
+    "developerName": "Community",
+    "category": "Productivity",
+    "capabilities": [
+      "Local session cleanup",
+      "Exact session ID lookup",
+      "Permanent deletion"
+    ],
+    "defaultPrompt": "Delete a Codex session by ID."
+  }
+}
