@@ -1,4 +1,4 @@
 interface:
   display_name: "Remote Reconnection"
   short_description: "Fix Codex Desktop remote SSH reconnection loops."
-  default_prompt: "Diagnose and repair Codex Desktop remote reconnection for a remote host."
+  default_prompt: "Ask for the remote SSH target and proxy URL first, then diagnose and repair Codex Desktop remote reconnection."

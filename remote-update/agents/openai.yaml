@@ -1,4 +1,4 @@
 interface:
   display_name: "Remote Update"
   short_description: "Update remote Codex CLI to match the current app version."
-  default_prompt: "Update the remote Codex CLI to the current Codex App bundled version, then verify and repair remote reconnection."
+  default_prompt: "Ask for the remote SSH target and proxy URL first, then update the remote Codex CLI and repair reconnection."

@@ -7,15 +7,29 @@ description: Update a remote Linux Codex CLI to match the current local Codex Ap
 
 Use this skill to update a remote Linux host's `codex` command to the current local Codex App bundled CLI version and then repair Desktop Remote reconnection.
 
+## Required Intake
+
+Before running any command, check whether the current user message explicitly includes:
+
+- SSH target, such as an IP address, hostname, or SSH config alias.
+- Proxy URL, or an explicit statement that no proxy is needed.
+
+If either value is missing, stop and ask the user for the missing value(s). Do not inspect history, infer a default host, read `~/.ssh/config`, or execute local download/update/remote commands until the user replies. Use a concise question such as:
+
+```text
+请提供远程 SSH 目标（IP/主机名/SSH alias）以及代理 URL；如果不需要代理，请回复“无代理”。
+```
+
 ## Workflow
 
-1. Determine the local App bundled version:
+1. Use only the SSH target and proxy URL supplied by the user in the current intake.
+2. Determine the local App bundled version:
 
 ```bash
 /Applications/Codex.app/Contents/Resources/codex --version
 ```
 
-2. Run the bundled updater:
+3. Run the bundled updater:
 
 ```bash
 remote-update/scripts/update_remote_codex.sh <ssh-target> [proxy-url]
@@ -24,10 +38,10 @@ remote-update/scripts/update_remote_codex.sh <ssh-target> [proxy-url]
 Example:
 
 ```bash
-remote-update/scripts/update_remote_codex.sh 106.15.104.174 http://106.15.104.174:7901
+remote-update/scripts/update_remote_codex.sh <ssh-target> [proxy-url]
 ```
 
-3. The updater should:
+4. The updater should:
    - Detect the local App bundled `codex-cli` version unless `CODEX_REMOTE_VERSION` is explicitly set.
    - Detect remote CPU architecture with `uname -m`.
    - Download the matching `rust-v<version>` Linux package on the local machine.

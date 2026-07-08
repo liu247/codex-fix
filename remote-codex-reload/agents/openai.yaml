@@ -1,0 +1,5 @@
+version: 1
+interface:
+  display_name: "Remote Codex Reload"
+  short_description: "Fix Codex VS Code Remote Webview logo hangs."
+  default_prompt: "Ask for the remote SSH target and proxy URL first, then diagnose and patch the OpenAI/Codex VS Code Webview logo hang."

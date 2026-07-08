@@ -9,7 +9,7 @@ Updates a remote Linux Codex CLI to the current local Codex App bundled version.
 Set CODEX_REMOTE_VERSION to override version detection.
 Set CODEX_APP_CODEX to override the local app codex path.
 Example:
-  update_remote_codex.sh 106.15.104.174 http://106.15.104.174:7901
+  update_remote_codex.sh my-remote-host http://127.0.0.1:7890
 USAGE
 }
 

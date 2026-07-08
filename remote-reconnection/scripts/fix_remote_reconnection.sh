@@ -7,7 +7,7 @@ Usage: fix_remote_reconnection.sh <ssh-target> [proxy-url]
 
 Repairs Codex Desktop Remote reconnection loops on a remote Linux host.
 Example:
-  fix_remote_reconnection.sh 106.15.104.174 http://106.15.104.174:7901
+  fix_remote_reconnection.sh my-remote-host http://127.0.0.1:7890
 USAGE
 }
 

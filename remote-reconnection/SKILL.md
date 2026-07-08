@@ -7,9 +7,22 @@ description: Diagnose and repair Codex Desktop Remote SSH reconnection loops for
 
 Use this skill to repair Codex Desktop Remote reconnection loops on a remote Linux host.
 
+## Required Intake
+
+Before running any command, check whether the current user message explicitly includes:
+
+- SSH target, such as an IP address, hostname, or SSH config alias.
+- Proxy URL, or an explicit statement that no proxy is needed.
+
+If either value is missing, stop and ask the user for the missing value(s). Do not inspect history, infer a default host, read `~/.ssh/config`, or execute remote commands until the user replies. Use a concise question such as:
+
+```text
+请提供远程 SSH 目标（IP/主机名/SSH alias）以及代理 URL；如果不需要代理，请回复“无代理”。
+```
+
 ## Workflow
 
-1. Identify the SSH target. Prefer the user's explicit host, otherwise inspect local `~/.ssh/config` and recent context. For this user's default host, use `106.15.104.174` as `net` on port `51` through the configured SSH alias.
+1. Use only the SSH target and proxy URL supplied by the user in the current intake. Do not hard-code personal hosts, usernames, proxy URLs, or private repository paths.
 2. Run the bundled repair script first:
 
 ```bash
@@ -19,7 +32,7 @@ remote-reconnection/scripts/fix_remote_reconnection.sh <ssh-target> [proxy-url]
 Example:
 
 ```bash
-remote-reconnection/scripts/fix_remote_reconnection.sh 106.15.104.174 http://106.15.104.174:7901
+remote-reconnection/scripts/fix_remote_reconnection.sh <ssh-target> [proxy-url]
 ```
 
 3. The script should stop only Codex Desktop Remote processes for the control socket:
