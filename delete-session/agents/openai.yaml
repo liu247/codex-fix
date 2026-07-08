@@ -1,0 +1,4 @@
+interface:
+  display_name: "Delete Session"
+  short_description: "Delete local Codex conversations by exact session ID."
+  default_prompt: "Ask for the exact Codex session ID first, then delete the matching local session file."

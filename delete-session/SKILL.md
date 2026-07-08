@@ -10,17 +10,17 @@ Use this skill when the user wants to permanently remove a local Codex conversat
 ## Workflow
 
 1. Ask for the session ID if the user did not provide one.
-2. Run the bundled script from this plugin directory with the exact ID:
+2. Run the bundled script from this skill directory with the exact ID:
 
 ```bash
-python3 scripts/delete_codex_session.py <session-id>
+delete-session/scripts/delete_codex_session.py <session-id>
 ```
 
 3. If the script reports `not found`, ask whether to scan a broader workspace directory.
 4. When the user provides or approves a broader directory, run:
 
 ```bash
-python3 scripts/delete_codex_session.py <session-id> --scan-from <directory>
+delete-session/scripts/delete_codex_session.py <session-id> --scan-from <directory>
 ```
 
 5. Report the deleted file path from the script output.
@@ -40,17 +40,17 @@ python3 scripts/delete_codex_session.py <session-id> --scan-from <directory>
 Dry run:
 
 ```bash
-python3 scripts/delete_codex_session.py <session-id> --dry-run
+delete-session/scripts/delete_codex_session.py <session-id> --dry-run
 ```
 
 List the resolved sessions root:
 
 ```bash
-python3 scripts/delete_codex_session.py --sessions-root
+delete-session/scripts/delete_codex_session.py --sessions-root
 ```
 
 Scan a broader directory for project-local `.codex/sessions` roots:
 
 ```bash
-python3 scripts/delete_codex_session.py <session-id> --scan-from ~/Downloads/workspace
+delete-session/scripts/delete_codex_session.py <session-id> --scan-from ~/Downloads/workspace
 ```
