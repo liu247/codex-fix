@@ -1,4 +1,4 @@
 interface:
   display_name: "Remote Reconnection"
-  short_description: "Fix Codex Desktop remote SSH reconnection loops."
-  default_prompt: "Ask for the remote SSH target and proxy URL first, then diagnose and repair Codex Desktop remote reconnection."
+  short_description: "Fix Codex Desktop or VS Code Remote reconnection loops."
+  default_prompt: "Use $remote-reconnection to ask for the remote SSH target and proxy URL, then identify whether Codex Desktop or the VS Code extension is failing before repairing the matching remote process and proxy settings."
