@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Visualization"
+  short_description: "Explain code graph functions with source-backed annotations."
+  default_prompt: "Use $project-visualization to annotate this project's HTML call graph with verified function purposes and implementations, preserving the graph and marking unresolved symbols clearly."
